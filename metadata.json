@@ -1,0 +1,6 @@
+{
+  "name": "FieldTrack",
+  "description": "Offline-first field issue tracking application for field workers and operations coordinators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

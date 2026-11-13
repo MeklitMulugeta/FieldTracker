@@ -1,0 +1,31 @@
+{
+  "name": "fieldtrack",
+  "private": true,
+  "version": "0.1.0",
+  "description": "FieldTrack offline-first field issue tracking monorepo",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "dev": "concurrently -n client,server -c blue,green \"npm run dev --workspace=@fieldtrack/client\" \"npm run dev --workspace=@fieldtrack/server\"",
+    "dev:client": "npm run dev --workspace=@fieldtrack/client",
+    "dev:server": "npm run dev --workspace=@fieldtrack/server",
+    "build": "npm run build --workspace=@fieldtrack/client && npm run build --workspace=@fieldtrack/server",
+    "build:client": "npm run build --workspace=@fieldtrack/client",
+    "build:server": "npm run build --workspace=@fieldtrack/server",
+    "lint": "npm run lint --workspace=@fieldtrack/client && npm run lint --workspace=@fieldtrack/server",
+    "test": "npm run test --workspace=@fieldtrack/client && npm run test --workspace=@fieldtrack/server",
+    "test:client": "npm run test --workspace=@fieldtrack/client",
+    "test:server": "npm run test --workspace=@fieldtrack/server",
+    "clean": "rm -rf node_modules client/node_modules server/node_modules client/dist server/dist"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
